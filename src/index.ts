@@ -2,7 +2,7 @@ import express, { Request, Response } from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import connectDB from './config/database';
-import nombreGrupoEjemploRouter from './modules/nombre_grupo_ejemplo';
+//import nombreGrupoEjemploRouter from './modules/nombre_grupo_ejemplo';
 import trabajosVengadoresRouter from './modules/los_vengadores_trabajos/routes/trabajo.routes';
 import horarioRouter from './modules/los_vengadores_trabajos/routes/horario.routes';
 import disponibilidadRouter from './modules/los_vengadores_trabajos/routes/calendario-disponibilidad.routes';
@@ -44,7 +44,7 @@ app.get('/api/health', (req: Request, res: Response) => {
 // MONTAR MÓDULOS/GRUPOS AQUÍ
 // ============================================
 // Montar tus módulos aquí:
-app.use('/api/nombre_grupo_ejemplo', nombreGrupoEjemploRouter);
+//app.use('/api/nombre_grupo_ejemplo', nombreGrupoEjemploRouter);
 app.use('/api/vengadores/trabajos', trabajosVengadoresRouter); //este el modulo de hu 1.7 y 1.8
 app.use('/api/los_vengadores', horarioRouter); //modulo hu 1
 app.use('/api/los_vengadores/calendario-disponibilidad', disponibilidadRouter); //modulo de la hu2
@@ -67,7 +67,7 @@ app.listen(PORT, () => {
   console.log(` Modo: ${process.env.NODE_ENV}`);
   console.log(` URL: http://localhost:${PORT}`);
   console.log(`\n Módulos cargados:`);
-  console.log(`   - /api/nombre_grupo_ejemplo`);
+  //console.log(`   - /api/nombre_grupo_ejemplo`);
   console.log(`   - /api/vengadores/trabajos`); // iniciar sevidor con con la api
 
   console.log(`\n Listo para recibir peticiones!\n`);
